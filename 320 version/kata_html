@@ -16,4 +16,17 @@
                 <li><a href="#section3">Раздел 3</a></li>
             </ul>
         </nav>
-    </header>
+    </header> 
+    <main>
+        <section id="section1">
+            <h2>Раздел 1</h2>
+            <p>Это первый раздел вашего HTML документа.</p>
+        </section>
+        <section id="section2">
+            <h2>Раздел 2</h2>
+            <p>Это второй раздел вашего HTML документа.</p>
+        </section>
+        <section id="section3">
+            <h2>Раздел 3</h2>
+            <p>Это третий раздел вашего HTML документа.</p>
+        </section>
