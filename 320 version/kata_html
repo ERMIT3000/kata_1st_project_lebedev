@@ -29,4 +29,9 @@
         <section id="section3">
             <h2>Раздел 3</h2>
             <p>Это третий раздел вашего HTML документа.</p>
-        </section>
+        </section>          
+    </main>
+    <footer>
+        <p>&copy; 2024 Kata HTML. Все права защищены.</p>
+    </footer>
+</body>
