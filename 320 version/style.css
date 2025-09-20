@@ -1,6 +1,6 @@
 @font-face {
-    src: url("../fonts/TTLakes/TTLakes-Black.woff2") format("woff2"),
-         url("../fonts/TTLakes/TTLakes-Black.woff") format("woff");
+    src: url("../fonts/TTLakes/TTLakes-Regular.woff2") format("woff2"),
+         url("../fonts/TTLakes/TTLakes-Regular.woff") format("woff");
     font-family: "TT Lakes";
     font-weight: 400;
     font-style: normal;
@@ -12,7 +12,9 @@
     font-weight: 700;
     font-style: normal;
 }
-
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: #FFFFFF;
     font-family: "TT Lakes"; 
@@ -20,4 +22,40 @@ body {
     margin: 20px;
     font-weight: 400; 
     color: black; 
+}
+bold {
+    font-weight: 700; 
+} 
+/* 320px version */
+
+.header {
+    position: relative;
+    width: 320px;
+    height: 88px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header__container{
+    position: absolute;
+    width: 320px;
+    height: 88px;
+    left: 0px;
+    top: 0px;
+}
+.header__logo {
+    position: absolute;
+    left: 72.73px;
+    top: 18.59px;
+}
+.header__burger{
+    position: absolute;
+    top: 24px;
+    left: 16px;
+}
+.header__palka {
+    position: absolute;
+    top: 28px;
+    left: 186px;
 }
