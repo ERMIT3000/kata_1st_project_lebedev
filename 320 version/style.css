@@ -107,6 +107,12 @@ bold {
     top: 88px;
     background: #F8F8F8;
 }
+.main__nav-wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative; 
+    overflow: hidden; 
+}
 .main__nav {
     max-width: 320px; 
     overflow-x: auto; 
@@ -115,7 +121,26 @@ bold {
     margin-top: 16px;
     position: relative;
 }
+.main__nav-wrapper::before,
+.main__nav-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    pointer-events: none; 
+    z-index: 1; 
+}
 
+.main__nav-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right,rgba(248, 248, 248, 1), rgba(255, 255, 255, 0)); /* Затухание слева */
+}
+
+.main__nav-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left,rgba(248, 248, 248, 1), rgba(255, 255, 255, 0)); /* Затухание справа */
+}
 .main__nav-list {
     list-style: none; 
     display: flex;
@@ -154,22 +179,4 @@ bold {
     top: 0px;
     display: flex;
     align-items: center;
-}
-.main__nav::before,
-.main__nav::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 20px; /* Ширина зоны затухания */
-    pointer-events: none; /* Не блокируем клики */
-}
-.main__nav::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Затухание слева */
-}
-
-.main__nav::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Затухание справа */
 }
