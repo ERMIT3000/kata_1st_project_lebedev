@@ -12,6 +12,13 @@
     font-weight: 700;
     font-style: normal;
 }
+@font-face {
+    font-family: "TT Lakes";
+    src: url("../fonts/TTLakes/TTLakes-Medium.woff2") format("woff2"),
+         url("../fonts/TTLakes/TTLakes-Medium.woff") format("woff");     
+    font-weight: 500;
+    font-style: normal;
+}
 * {
     box-sizing: border-box;
 }
@@ -83,20 +90,86 @@ bold {
     height: 40px;
     fill: none;
 }
-.main {
-    position: absolute;
-    width: 320px;
-    height: 509px;
-    left: 0px;
-    top: 88px;
-    margin-top: 0px;
-    background: #F8F8F8;
+.main__uslugi {
+    position: relative;
+    top: 0px;
+    left: 16px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.6px;
 }
 .main__container {
     position: absolute;
     width: 320px;
     height: 509px;
     left: 0px;
+    top: 88px;
+    background: #F8F8F8;
+}
+.main__nav {
+    max-width: 320px; 
+    overflow-x: auto; 
+    white-space: nowrap; 
+    margin-left: auto;
+    margin-top: 16px;
+    position: relative;
+}
+
+.main__nav-list {
+    list-style: none; 
+    display: flex;
+    flex-direction: row; 
+    padding-left: 16px;
+    padding-top: 40px;
+}
+
+.main__nav-item {
+    display: inline-flex;
+    padding-right: 24px
+}
+
+.main__nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #7E7E82;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    transition: border 0.3s ease; 
+}
+
+.main__nav-link:hover {
+    border: 2px solid #B8FFEC; 
+    border-radius: 6px; 
+    background-color: #FFFFFF;
+}
+.main__highlight {
+    position: absolute;
+    left: 0px;
     top: 0px;
-    margin-top: 0px;
+    display: flex;
+    align-items: center;
+}
+.main__nav::before,
+.main__nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Ширина зоны затухания */
+    pointer-events: none; /* Не блокируем клики */
+}
+.main__nav::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Затухание слева */
+}
+
+.main__nav::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Затухание справа */
 }
