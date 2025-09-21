@@ -29,11 +29,6 @@ bold {
 /* 320px version */
 
 .header {
-    position: absolute;
-    width: 320px;
-    height: 88px;
-    left: 0px;
-    top: 0px;
     background: #FFFFFF;
 }
 .header__container{
@@ -97,4 +92,11 @@ bold {
     margin-top: 0px;
     background: #F8F8F8;
 }
-main
+.main__container {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 0px;
+    top: 0px;
+    margin-top: 0px;
+}
