@@ -147,13 +147,12 @@ bold {
 }
 .main__nav-item {
     display: inline-flex;
-    padding-right: 24px;
 }
 .main__nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px; 
+    padding: 8px 16px;
     color: #7E7E82;
     text-decoration: none;
     font-size: 16px;
@@ -276,16 +275,9 @@ bold {
         left: 24px;
     }
     .main__nav-list {
-        gap: 10px;
         padding-left: 0px;
         padding-right: 24px;
         padding-top: 32px;
-    }
-    .main__nav-item {
-        padding-right: 0;
-    }
-    .main__nav-link {
-        padding: 8px 16px;
     }
     .main__uslugi {
         left: 24px;
@@ -302,7 +294,7 @@ bold {
     .content {
         width: 768px; 
         height: 208px;
-        top: 320px;
+        top: 300px;
         left: 0px;
     }
     .content__text { 
@@ -334,7 +326,8 @@ bold {
         width: 360px;
         height: 208px;
         left: 380px; 
-        top: 0px;
+        top: 16px;
+        border-radius: 8px;
     }
     .main__nav-wrapper::before,
     .main__nav-wrapper::after {
