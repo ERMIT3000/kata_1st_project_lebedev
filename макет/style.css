@@ -72,7 +72,6 @@ bold {
     list-style: none; 
     display: flex;
     flex-direction: row; 
-    padding-left: 16px;
 }
 .header__nav-item {
     display: flex;
@@ -244,6 +243,11 @@ bold {
         top: 28px;
         left: 84px; 
     }
+    .header__palka--clone {
+        position: absolute;
+        top: 28px;
+        left: 645px; 
+    }
     .header__nav {
         max-width: 768px;
         overflow-x: visible; 
@@ -253,11 +257,6 @@ bold {
         justify-content: flex-end;
         top: 24px;
         padding-right: 16px;
-    }
-    .header__nav-link {
-        align-items: center;
-        padding-right: 8px;
-        padding-right: 8px;
     }
     .main__container {
         width: 768px;
