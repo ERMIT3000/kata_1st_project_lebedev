@@ -62,6 +62,9 @@ bold {
     top: 28px;
     left: 186px;
 }
+.header__palka--clone svg {
+    display: none; 
+}
 .header__nav {
     max-width: 132px; 
     overflow-x: auto; 
@@ -72,6 +75,7 @@ bold {
     list-style: none; 
     display: flex;
     flex-direction: row; 
+    padding-left: 16px;
 }
 .header__nav-item {
     display: flex;
@@ -244,9 +248,13 @@ bold {
         left: 84px; 
     }
     .header__palka--clone {
-        position: absolute;
-        top: 28px;
-        left: 645px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+    .header__palka--clone svg {
+        display: flex; 
     }
     .header__nav {
         max-width: 768px;
@@ -256,7 +264,10 @@ bold {
         display: flex;
         justify-content: flex-end;
         top: 24px;
-        padding-right: 16px;
+        padding-right: 24px;
+    }
+    .header__nav-list {
+        gap: 8px; 
     }
     .main__container {
         width: 768px;
@@ -264,10 +275,11 @@ bold {
     }
     .main__nav-wrapper {
         max-width: 768px;   
+        position: relative;
+        overflow: hidden;
     }
     .main__nav {
         max-width: 768px;
-        height:  40;
         margin-top: 90px;
         font-size: 16px;
         line-height: 24px;
@@ -293,7 +305,7 @@ bold {
     .content {
         width: 768px; 
         height: 208px;
-        top: 300px;
+        top: 280px;
         left: 0px;
     }
     .content__text { 
@@ -330,9 +342,21 @@ bold {
     }
     .main__nav-wrapper::before,
     .main__nav-wrapper::after {
-        top: 64px;
-        height: 48px;
+        content: '';
+        position: absolute;
+        top: 122px; /* Aligned with main__nav: 90px margin-top + 32px padding-top */
         width: 24px;
+        height: 32px; /* Matches nav item height */
+        pointer-events: none;
+        z-index: 1;
+    }
+    .main__nav-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(248, 248, 248, 1), rgba(255, 255, 255, 0));
+    }
+    .main__nav-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(248, 248, 248, 1), rgba(255, 255, 255, 0));
     }
 }
 
