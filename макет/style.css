@@ -263,10 +263,9 @@ bold {
     .main__container {
         width: 768px;
         height: 504px; 
-        outline: 1px solid red;
     }
     .main__nav-wrapper {
-        max-width: 768px;
+        max-width: 768px;   
     }
     .main__nav {
         max-width: 768px;
@@ -274,8 +273,7 @@ bold {
         margin-top: 90px;
         font-size: 16px;
         line-height: 24px;
-        letter-spacing: -0.2px;
-        outline: 1px solid red;
+        left: 24px;
     }
     .main__nav-list {
         gap: 10px;
@@ -294,13 +292,11 @@ bold {
         font-size: 28px;
         line-height: 40px;
         letter-spacing: 0.6px;
-        outline: 1px solid red;
     }
     .main__highlight, 
     .highlight {
         left: 0px;
         top: 24px;
-        outline: 1px solid red;
     }
     .main__content,
     .content {
@@ -308,7 +304,6 @@ bold {
         height: 208px;
         top: 320px;
         left: 0px;
-        outline: 1px solid rgb(81, 0, 255);
     }
     .content__text { 
         width: 350px; 
@@ -317,7 +312,6 @@ bold {
         padding-right: 24px;
         padding-left: 24px;
         letter-spacing: 0.2px; 
-        outline: 1px solid rgb(0, 157, 16);
     }
     .content__text--visible-on-320 {
         display: block;
@@ -341,8 +335,6 @@ bold {
         height: 208px;
         left: 380px; 
         top: 0px;
-        border-radius: 8px;
-        outline: 1px solid red;
     }
     .main__nav-wrapper::before,
     .main__nav-wrapper::after {
