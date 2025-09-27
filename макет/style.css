@@ -283,10 +283,10 @@ bold {
         margin-top: 90px;
         font-size: 16px;
         line-height: 24px;
-        left: 24px;
+        left: 0px;
     }
     .main__nav-list {
-        padding-left: 0px;
+        padding-left: 24px;
         padding-right: 24px;
         padding-top: 32px;
     }
@@ -344,7 +344,7 @@ bold {
     .main__nav-wrapper::after {
         content: '';
         position: absolute;
-        top: 122px; /* Aligned with main__nav: 90px margin-top + 32px padding-top */
+        top: 142px; /* Aligned with main__nav: 90px margin-top + 32px padding-top */
         width: 24px;
         height: 32px; /* Matches nav item height */
         pointer-events: none;
