@@ -27,7 +27,7 @@ body {
     background-color: #FFFFFF;
     font-family: "TT Lakes"; 
     font-size: 16px;   
-    margin: 0; /* Убираем margin, чтобы main__container занимал всё пространство */
+    margin: 0; 
     font-weight: 400; 
     color: black; 
 }
@@ -364,34 +364,33 @@ bold {
     body {
         margin: 0; /* Убираем margin для полного занятия пространства */
     }
-    .header__container {
-        width: 100%;
-        max-width: 1120px;
-        height: 88px;
-        display: flex;
-        justify-content: flex-end; /* Иконки справа */
-        align-items: center;
-        padding: 0 33px; /* Отступы 33px слева и справа */
-        position: absolute;
-        top: 0;
-        margin: 0 auto;
+    .header {
+        display: none; /* Полностью скрываем header */
     }
-    .header__logo,
-    .header__burger,
-    .header__palka,
-    .header__palka--clone {
-        display: none; /* Убираем логотип, бургер и палки */
+    .main__container {
+        width: 1120px;
+        height: 535px; /* Занимает всё пространство */
+        margin: 0 auto;
+        background: #F8F8F8;
+        padding: 24px 33px; /* Отступы 33px слева и справа, 24px сверху */
+        display: flex;
+        flex-direction: column; /* Вертикальная организация */
+        position: relative;
     }
     .header__nav {
-        max-width: none;
+        position: absolute;
+        top: 24px; /* Справа сверху */
+        right: 33px; /* Отступ справа 33px */
         display: flex;
         align-items: center;
+        z-index: 2; /* На случай перекрытия */
     }
     .header__nav-list {
         list-style: none;
         display: flex;
-        gap: 16px; /* Отступ между пунктами навигации */
+        gap: 16px; /* Отступ между иконками */
         padding: 0;
+        margin: 0;
     }
     .header__nav-item:nth-child(n+3) {
         display: none; /* Оставляем только первые две иконки */
@@ -407,44 +406,50 @@ bold {
         text-decoration: none;
     }
     .header__nav-link:nth-child(1)::before {
-        content: "Оставить заявку"; /* Текст для первой иконки */
+        content: "Оставить заявку"; /* Текст слева от первой иконки */
     }
     .header__nav-link:nth-child(2)::before {
-        content: "Статус ремонта"; /* Текст для второй иконки */
+        content: "Статус ремонта"; /* Текст слева от второй иконки */
     }
     .header__nav-icon {
         width: 40px;
         height: 40px;
-        fill: none;
+        fill: currentColor; /* Исправляем отображение иконок */
     }
-    .main__container {
-        width: 1120px;
-        height: 535px; /* Занимает всю высоту */
-        margin: 0 auto;
-        position: relative;
-        background: #F8F8F8;
-        padding: 0 33px; /* Отступы 33px слева и справа */
+    .main__highlight {
+        position: relative; /* В потоке, чтобы не съезжать */
+        margin-left: 0; /* Отступы уже в контейнере */
+        margin-top: 12px; /* Выравнивание с заголовком */
+        display: flex;
+        align-items: center;
+    }
+    .main__uslugi {
+        font-size: 36px; /* Увеличенный шрифт для 1120px */
+        line-height: 48px;
+        letter-spacing: 0.4px;
+        margin: 0 0 16px 0; /* Отступ снизу */
+        padding: 0;
     }
     .main__nav-wrapper {
-        max-width: 1054px; /* 1120px - 33px - 33px */
+        max-width: 1054px; /* 1120px - 33px*2 */
         position: relative;
-        overflow: visible; /* Убираем слайдер */
+        overflow: visible; /* Без слайдера */
     }
     .main__nav {
         max-width: 1054px;
-        margin-top: 32px;
     }
     .main__nav-list {
         display: flex;
-        flex-wrap: wrap; /* Разрешаем перенос строки */
-        gap: 24px;
-        padding: 40px 0; /* Отступы сверху и снизу, без боковых, так как они в main__container */
+        flex-wrap: wrap;
+        gap: 24px; /* Как в версии 768px */
+        padding: 0;
+        margin: 0 0 24px 0; /* Отступ снизу для разделения */
     }
     .main__nav-item {
         display: inline-flex;
     }
     .main__nav-item:last-child {
-        flex-basis: 100%; /* Переносим "Отзывы" на новую строку */
+        flex-basis: 100%; /* Перенос "Отзывы" */
     }
     .main__nav-link {
         padding: 10px 16px;
@@ -461,27 +466,20 @@ bold {
         background-color: #FFFFFF;
         color: #1B1C21;
     }
-    .main__uslugi {
-        font-size: 36px;
-        line-height: 48px;
-        letter-spacing: 0.4px;
-        margin-bottom: 1.5rem;
-        padding: 0; /* Отступы уже в main__container */
-    }
     .main__content,
     .content {
-        width: 1054px; /* 1120px - 33px - 33px */
+        width: 1054px; /* 1120px - 33px*2 */
         height: auto;
-        top: 220px;
-        padding: 0; /* Отступы уже в main__container */
         display: flex;
         gap: 24px;
-        position: relative;
+        padding: 0;
+        position: relative; /* В потоке, чтобы не съезжать */
+        flex-grow: 1; /* Занимает оставшееся пространство */
     }
     .content__text {
         font-size: 16px;
         line-height: 24px;
-        width: 50%;
+        width: 50%; /* Текст слева */
         padding: 0;
         margin-bottom: 16px;
     }
@@ -499,6 +497,7 @@ bold {
         text-decoration: none;
         display: inline-flex;
         gap: 8px;
+        position: relative;
     }
     .content__link:hover {
         color: #6f6f6f;
@@ -511,6 +510,6 @@ bold {
     }
     .main__nav-wrapper::before,
     .main__nav-wrapper::after {
-        content: none; /* Убираем слайдер */
+        content: none; /* Без слайдера */
     }
 }
