@@ -27,7 +27,7 @@ body {
     background-color: #FFFFFF;
     font-family: "TT Lakes"; 
     font-size: 16px;   
-    margin: 20px;
+    margin: 0; /* Убираем margin, чтобы main__container занимал всё пространство */
     font-weight: 400; 
     color: black; 
 }
@@ -344,9 +344,8 @@ bold {
     .main__nav-wrapper::after {
         content: '';
         position: absolute;
-        top: 142px; /* Aligned with main__nav: 90px margin-top + 32px padding-top */
-        width: 24px;
-        height: 32px; /* Matches nav item height */
+        top: 142px; 
+        height: 32px; 
         pointer-events: none;
         z-index: 1;
     }
@@ -360,101 +359,158 @@ bold {
     }
 }
 
-/* Media query for 1120px (оставлено без изменений) */
+/* Media query for 1120px */
 @media (min-width: 1120px) {
+    body {
+        margin: 0; /* Убираем margin для полного занятия пространства */
+    }
     .header__container {
-        width: 1120px;
+        width: 100%;
+        max-width: 1120px;
         height: 88px;
+        display: flex;
+        justify-content: flex-end; /* Иконки справа */
+        align-items: center;
+        padding: 0 33px; /* Отступы 33px слева и справа */
+        position: absolute;
+        top: 0;
+        margin: 0 auto;
     }
-    .header__logo {
-        left: 32px;
-        top: 24px;
-    }
-    .header__burger {
-        top: 24px;
-        left: 24px;
-    }
-    .header__palka {
-        top: 28px;
-        left: 900px;
+    .header__logo,
+    .header__burger,
+    .header__palka,
+    .header__palka--clone {
+        display: none; /* Убираем логотип, бургер и палки */
     }
     .header__nav {
-        max-width: 400px;
+        max-width: none;
+        display: flex;
+        align-items: center;
     }
     .header__nav-list {
-        padding-left: 32px;
+        list-style: none;
+        display: flex;
+        gap: 16px; /* Отступ между пунктами навигации */
+        padding: 0;
+    }
+    .header__nav-item:nth-child(n+3) {
+        display: none; /* Оставляем только первые две иконки */
     }
     .header__nav-link {
-        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Отступ между текстом и иконкой */
+        padding: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        text-decoration: none;
+    }
+    .header__nav-link:nth-child(1)::before {
+        content: "Оставить заявку"; /* Текст для первой иконки */
+    }
+    .header__nav-link:nth-child(2)::before {
+        content: "Статус ремонта"; /* Текст для второй иконки */
+    }
+    .header__nav-icon {
+        width: 40px;
+        height: 40px;
+        fill: none;
     }
     .main__container {
         width: 1120px;
-        height: 700px;
+        height: 535px; /* Занимает всю высоту */
+        margin: 0 auto;
+        position: relative;
+        background: #F8F8F8;
+        padding: 0 33px; /* Отступы 33px слева и справа */
     }
     .main__nav-wrapper {
-        max-width: 1120px;
+        max-width: 1054px; /* 1120px - 33px - 33px */
+        position: relative;
+        overflow: visible; /* Убираем слайдер */
     }
     .main__nav {
-        max-width: 1120px;
+        max-width: 1054px;
         margin-top: 32px;
     }
     .main__nav-list {
+        display: flex;
+        flex-wrap: wrap; /* Разрешаем перенос строки */
         gap: 24px;
-        padding-left: 32px;
-        padding-top: 40px;
+        padding: 40px 0; /* Отступы сверху и снизу, без боковых, так как они в main__container */
     }
     .main__nav-item {
-        padding-right: 0;
+        display: inline-flex;
+    }
+    .main__nav-item:last-child {
+        flex-basis: 100%; /* Переносим "Отзывы" на новую строку */
     }
     .main__nav-link {
         padding: 10px 16px;
-        font-size: 18px;
-        line-height: 26px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #7E7E82;
+        text-decoration: none;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+    .main__nav-link:hover {
+        border: 2px solid #B8FFEC;
+        background-color: #FFFFFF;
+        color: #1B1C21;
     }
     .main__uslugi {
-        left: 32px;
         font-size: 36px;
         line-height: 48px;
+        letter-spacing: 0.4px;
+        margin-bottom: 1.5rem;
+        padding: 0; /* Отступы уже в main__container */
     }
     .main__content,
     .content {
-        width: 1056px;
-        height: 600px;
+        width: 1054px; /* 1120px - 33px - 33px */
+        height: auto;
         top: 220px;
-        left: 32px;
-        padding-left: 33px;
+        padding: 0; /* Отступы уже в main__container */
+        display: flex;
+        gap: 24px;
+        position: relative;
     }
     .content__text {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 24px;
-        padding-right: 32px;
-        padding-left: 32px;
+        width: 50%;
+        padding: 0;
+        margin-bottom: 16px;
     }
-    .content__text--visible-on-320 {
-        display: block;
-    }
+    .content__text--visible-on-320,
     .content__text--visible-on-768 {
-        display: block;
-        margin-bottom: 0;
+        display: none;
     }
     .content__text--visible-on-1120 {
         display: block;
-        margin: 0;
-        padding: 0;
     }
     .content__link {
-        left: 32px;
-        font-size: 20px;
+        font-size: 18px;
+        margin-top: 1rem;
+        color: black;
+        text-decoration: none;
+        display: inline-flex;
+        gap: 8px;
+    }
+    .content__link:hover {
+        color: #6f6f6f;
     }
     .content__image {
-        width: 530px;
-        top: 250px;
-        left: 550px;
+        width: 531.3px;
+        height: 307px;
+        position: relative;
+        border-radius: 12px;
     }
     .main__nav-wrapper::before,
     .main__nav-wrapper::after {
-        top: 72px;
-        height: 48px;
-        width: 32px;
+        content: none; /* Убираем слайдер */
     }
 }
