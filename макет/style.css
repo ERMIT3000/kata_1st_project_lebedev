@@ -228,6 +228,9 @@ bold {
     top: 165px;
     left: 0px;
 }
+.main__icon {
+    display: none;
+}
 
 /* Media query for 768px */
 @media (min-width: 768px) {
@@ -357,159 +360,62 @@ bold {
         right: 0;
         background: linear-gradient(to left, rgba(248, 248, 248, 1), rgba(255, 255, 255, 0));
     }
+    .main__icon {
+    display: none;
+    }
 }
 
 /* Media query for 1120px */
 @media (min-width: 1120px) {
-    body {
-        margin: 0; /* Убираем margin для полного занятия пространства */
-    }
-    .header {
-        display: none; /* Полностью скрываем header */
-    }
-    .main__container {
-        width: 1120px;
-        height: 535px; /* Занимает всё пространство */
-        margin: 0 auto;
-        background: #F8F8F8;
-        padding: 24px 33px; /* Отступы 33px слева и справа, 24px сверху */
-        display: flex;
-        flex-direction: column; /* Вертикальная организация */
-        position: relative;
-    }
-    .header__nav {
-        position: absolute;
-        top: 24px; /* Справа сверху */
-        right: 33px; /* Отступ справа 33px */
-        display: flex;
-        align-items: center;
-        z-index: 2; /* На случай перекрытия */
-    }
-    .header__nav-list {
-        list-style: none;
-        display: flex;
-        gap: 16px; /* Отступ между иконками */
-        padding: 0;
-        margin: 0;
-    }
-    .header__nav-item:nth-child(n+3) {
-        display: none; /* Оставляем только первые две иконки */
-    }
-    .header__nav-link {
-        display: flex;
-        align-items: center;
-        gap: 8px; /* Отступ между текстом и иконкой */
-        padding: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        color: black;
-        text-decoration: none;
-    }
-    .header__nav-link:nth-child(1)::before {
-        content: "Оставить заявку"; /* Текст слева от первой иконки */
-    }
-    .header__nav-link:nth-child(2)::before {
-        content: "Статус ремонта"; /* Текст слева от второй иконки */
-    }
-    .header__nav-icon {
-        width: 40px;
-        height: 40px;
-        fill: currentColor; /* Исправляем отображение иконок */
-    }
-    .main__highlight {
-        position: relative; /* В потоке, чтобы не съезжать */
-        margin-left: 0; /* Отступы уже в контейнере */
-        margin-top: 12px; /* Выравнивание с заголовком */
-        display: flex;
-        align-items: center;
-    }
-    .main__uslugi {
-        font-size: 36px; /* Увеличенный шрифт для 1120px */
-        line-height: 48px;
-        letter-spacing: 0.4px;
-        margin: 0 0 16px 0; /* Отступ снизу */
-        padding: 0;
-    }
-    .main__nav-wrapper {
-        max-width: 1054px; /* 1120px - 33px*2 */
-        position: relative;
-        overflow: visible; /* Без слайдера */
-    }
-    .main__nav {
-        max-width: 1054px;
-    }
-    .main__nav-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px; /* Как в версии 768px */
-        padding: 0;
-        margin: 0 0 24px 0; /* Отступ снизу для разделения */
-    }
-    .main__nav-item {
-        display: inline-flex;
-    }
-    .main__nav-item:last-child {
-        flex-basis: 100%; /* Перенос "Отзывы" */
-    }
-    .main__nav-link {
-        padding: 10px 16px;
-        font-size: 16px;
-        line-height: 24px;
-        color: #7E7E82;
-        text-decoration: none;
-        border: 2px solid transparent;
-        border-radius: 6px;
-        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    }
-    .main__nav-link:hover {
-        border: 2px solid #B8FFEC;
-        background-color: #FFFFFF;
-        color: #1B1C21;
-    }
-    .main__content,
-    .content {
-        width: 1054px; /* 1120px - 33px*2 */
-        height: auto;
-        display: flex;
-        gap: 24px;
-        padding: 0;
-        position: relative; /* В потоке, чтобы не съезжать */
-        flex-grow: 1; /* Занимает оставшееся пространство */
-    }
-    .content__text {
-        font-size: 16px;
-        line-height: 24px;
-        width: 50%; /* Текст слева */
-        padding: 0;
-        margin-bottom: 16px;
-    }
-    .content__text--visible-on-320,
-    .content__text--visible-on-768 {
+    .header__container {
         display: none;
     }
-    .content__text--visible-on-1120 {
-        display: block;
+    .main__container {
+        position: relative;
+        width: 1120px;
+        height: 504px;
+        top: 0px; 
+        left: 0px;
     }
-    .content__link {
-        font-size: 18px;
-        margin-top: 1rem;
-        color: black;
+    .main__icon {
+        display: flex;
+        justify-content: flex-end;
+        outline: 1px solid rgb(0, 142, 21);
+    }
+    .main__icon-list {
+        list-style: none; 
+        display: flex;
+        gap: 33px; 
+        position: absolute; 
+        margin: 0px;
+        top: 42px;
+        right: 33px;
+    }
+    .main__icon-item {
+        display: flex;
+    }
+    .main__icon-link {
+        display: flex;
+        align-items: center;
         text-decoration: none;
-        display: inline-flex;
-        gap: 8px;
-        position: relative;
+        
     }
-    .content__link:hover {
-        color: #6f6f6f;
+    .main__icon-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: black;
+        margin-right: 8px;
     }
-    .content__image {
-        width: 531.3px;
-        height: 307px;
-        position: relative;
-        border-radius: 12px;
-    }
-    .main__nav-wrapper::before,
-    .main__nav-wrapper::after {
-        content: none; /* Без слайдера */
+    .main__highlight {
+        position: absolute;
+        width: 300px;
+        height: 40px;
+        top: 42px;
+        left: 0px;
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: -0.6px;
     }
 }
