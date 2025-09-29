@@ -394,6 +394,7 @@ bold {
         display: flex;
         align-items: center;
         text-decoration: none;
+        outline: 1px solid red;
         
     }
     .main__icon-text {
