@@ -380,7 +380,6 @@ bold {
     .main__icon {
         display: flex;
         justify-content: flex-end;
-        outline: 1px solid rgb(0, 142, 21);
     }
     .main__icon-list {
         list-style: none; 
@@ -390,9 +389,6 @@ bold {
         margin: 0px;
         top: 42px;
         right: 33px;
-    }
-    .main__icon-item {
-        display: flex;
     }
     .main__icon-link {
         display: flex;
