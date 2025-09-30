@@ -373,7 +373,7 @@ bold {
     .main__container {
         position: relative;
         width: 1120px;
-        height: 504px;
+        height: 535px;
         top: 0px; 
         left: 0px;
     }
@@ -394,8 +394,6 @@ bold {
         display: flex;
         align-items: center;
         text-decoration: none;
-        outline: 1px solid red;
-        
     }
     .main__icon-text {
         font-size: 16px;
@@ -414,5 +412,30 @@ bold {
         font-size: 28px;
         line-height: 40px;
         letter-spacing: -0.6px;
+    }
+    .main__nav-wrapper {
+        max-width: 1120px; 
+        position: relative;
+        overflow: visible; 
+        padding-left: 33px;
+    }
+    .main__nav {
+        max-width: 1120px; 
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px ;
+        padding: 0;
+    }
+    .main__nav-list {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 0px; 
+        padding: 0;        
+    }
+        .main__nav-item {
+        display: inline-flex;
+    }
+    .main__nav-item:nth-child(2) {
+        display: none;
     }
 }
