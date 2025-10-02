@@ -428,7 +428,7 @@ bold {
         display: flex;
         flex-wrap: wrap; 
         gap: 0px; 
-        padding: 0;        
+        padding: 0;       
     }
         .main__nav-item {
         display: inline-flex;
