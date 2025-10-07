@@ -280,12 +280,11 @@ bold {
     align-items: center;
 }
 
-.main__content,
 .content {
     position: absolute;
     width: var(--container-width-sm);
     height: 407px;
-    top: 190px;
+    top: 100px;
     left: 0;
 }
 
@@ -333,6 +332,7 @@ bold {
     position: absolute;
     width: var(--container-width-sm);
     top: 165px;
+
     left: 0;
 }
 
