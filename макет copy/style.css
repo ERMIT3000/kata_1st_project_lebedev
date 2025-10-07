@@ -604,13 +604,12 @@ bold {
         width: var(--container-width-lg);
         height: 360px;
         top: -36px;
-        outline: #E02E5F 1px solid;
     }
 
     .content {
         top: 0px;
     }
-    
+
     .content__text {
         width: 530px;
         font-size: 14px;
@@ -618,3 +617,4 @@ bold {
         padding-left: 35px;
         letter-spacing: -0.2px;
     }
+}
