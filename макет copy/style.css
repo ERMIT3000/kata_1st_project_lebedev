@@ -120,6 +120,9 @@ bold {
     overflow-x: auto;
     white-space: nowrap;
     margin-left: auto;
+    position: absolute;
+    top: 8px;
+    left: 188px
 }
 
 .header__nav-list {
@@ -128,7 +131,7 @@ bold {
     flex-direction: row;
     padding-left: 20px;
     gap: 16px;
-    top: 24px;
+    
 }
 
 .header__nav-item {
