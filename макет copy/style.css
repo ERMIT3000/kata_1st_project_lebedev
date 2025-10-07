@@ -341,7 +341,7 @@ bold {
 }
 
 @media (min-width: 768px) {
-    .header__container {
+        .header__container {
         width: var(--container-width-md);
         height: 88px;
     }
@@ -368,6 +368,10 @@ bold {
         padding: 8px;
     }
 
+    .header__palka--clone svg {
+        display: flex;
+    }
+
     .header__nav {
         max-width: var(--container-width-md);
         overflow-x: visible;
@@ -375,12 +379,12 @@ bold {
         margin-left: 0;
         display: flex;
         justify-content: flex-end;
-        top: 24px;
+        right: 8px;
         padding-right: 24px;
     }
 
     .header__nav-list {
-        gap: 8px;
+        gap: 16px;
     }
 
     .main__container {
