@@ -1,4 +1,4 @@
-/* Подключение шрифтов TT Lakes */
+
 @font-face {
     font-family: "TT Lakes";
     src: url("../fonts/TTLakes/TTLakes-Regular.woff2") format("woff2"),
@@ -23,7 +23,6 @@
     font-style: normal;
 }
 
-/* CSS-переменные для цветов и размеров */
 :root {
     --background-main: #F8F8F8;
     --text-color: #1B1C21;
@@ -35,7 +34,6 @@
     --container-width-lg: 1120px;
 }
 
-/* Базовые стили */
 * {
     box-sizing: border-box;
 }
@@ -53,7 +51,6 @@ bold {
     font-weight: 700;
 }
 
-/* Стили для шапки */
 .header {
     background: var(--white);
 }
@@ -72,7 +69,6 @@ bold {
     top: 18.59px;
 }
 
-/* Кнопка бургера с розовым кругом */
 .header__burger {
     position: absolute;
     top: 24px;
@@ -93,7 +89,6 @@ bold {
     background-color: #E02E5F;
 }
 
-/* Иконка бургера с белым цветом */
 .header__burger-icon {
     width: 20px;
     height: 20px;
@@ -110,7 +105,6 @@ bold {
     left: 186px;
 }
 
-/* Навигация в шапке (слайдер на 320px) */
 .header__nav {
     max-width: 132px;
     overflow-x: auto;
