@@ -24,9 +24,25 @@
                 </svg>
             </a>
             <!-- Кнопка бургера для мобильного меню -->
-            <button class="header__burger">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label class="header__burger" for="menu-toggle" aria-label="Меню">
                 <span class="header__burger-icon"></span>
-            </button>
+            </label>
+            <div class="mobile-menu">
+                <a href="#" class="menu-toggle_link">
+                    <span class="menu-toggle_icon"></span>
+                </a>
+                <ul>
+                    <li><a href="#">Услуги и сервисы</a></li>
+                    <li><a href="#">Корпоративным клиентам</a></li>
+                    <li><a href="#">Продавцам техники</a></li>
+                    <li><a href="#">Партнерам</a></li>
+                    <li><a href="#">Производителям</a></li>
+                    <li><a href="#">Наши сервисные центры</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+
+            </div>
             <!-- Разделительная линия -->
             <div class="header__palka">
                 <svg width="2" height="32" viewBox="0 0 2 32" fill="none" xmlns="http://www.w3.org/2000/svg">
