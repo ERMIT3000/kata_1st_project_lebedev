@@ -1,21 +1,21 @@
 
 @font-face {
     font-family: "TT Lakes";
-    src: url("TTLakes-Regular.woff") format("woff");
+    src: url('fonts/TTLakes-Regular.woff') format("woff");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "TT Lakes";
-    src: url("TTLakes-Bold.woff") format("woff");
+    src: url('fonts/TTLakes-Bold.woff') format("woff");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: "TT Lakes";
-    src: url("TTLakes-Medium.woff") format("woff");
+    src: url('fonts/TTLakes-Medium.woff') format("woff");
     font-weight: 500;
     font-style: normal;
 }
@@ -157,23 +157,23 @@ bold {
 
 /* Иконки навигации */
 .header__nav-item:nth-child(1) .header__nav-link .header__nav-icon {
-    background-image: url('pics/icons/call.svg')
+    background-image: url('pics/icons/call.svg');
 }
 
 .header__nav-item:nth-child(2) .header__nav-link .header__nav-icon {
-    background-image: url('pics/icons/contact.svg')
+    background-image: url('pics/icons/contact.svg');
 }
 
 .header__nav-item:nth-child(3) .header__nav-link .header__nav-icon {
-    background-image: url('pics/icons/profile.svg')
+    background-image: url('pics/icons/profile.svg');
 }
 
 .header__nav-item:nth-child(5) .header__nav-link .header__nav-icon {
-    background-image: url('pics/icons/settings.svg')
+    background-image: url('pics/icons/settings.svg');
 }
 
 .header__nav-item:nth-child(6) .header__nav-link .header__nav-icon {
-    background-image: url('pics/icons/search.svg')
+    background-image: url('pics/icons/search.svg');
 }
 .menu-toggle_link .menu-toggle_icon {
     background-image: url('pics/icons/search2.svg');
