@@ -129,8 +129,7 @@ bold {
 .header__palka--clone {
     display: none;
 }
-.header__nav-link,
-.menu-toggle_link {
+.header__nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,20 +140,46 @@ bold {
     transition: background-color 0.3s ease;
 }
 
-.header__nav-link:hover,
-.menu-toggle_link:hover {
+.header__nav-link:hover {
     background-color: #E02E5F;
 }
 
-.header__nav-icon,
-.menu-toggle_icon {
+.header__nav-icon {
     width: 20px;
     height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
+/* —— КНОПКА ПОИСКА В МОБИЛЬНОМ МЕНЮ —— */
+.mobile-menu .menu-toggle_link {
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: #FF3E79;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    z-index: 10;
+}
 
+.mobile-menu .menu-toggle_link:hover {
+    background: #E02E5F;
+}
+
+.menu-toggle_icon {
+    width: 20px;
+    height: 20px;
+    background: url('pics/icons/search2.svg') center/contain no-repeat;
+    background-size: 20px 20px;  
+}
+.mobile-menu {
+    padding-top: 88px; /* чтобы меню не налазило на хедер */
+}
 /* Иконки навигации */
 .header__nav-item:nth-child(1) .header__nav-link .header__nav-icon {
     background-image: url('pics/icons/call.svg');
@@ -175,9 +200,7 @@ bold {
 .header__nav-item:nth-child(6) .header__nav-link .header__nav-icon {
     background-image: url('pics/icons/search.svg');
 }
-.menu-toggle_link .menu-toggle_icon {
-    background-image: url('pics/icons/search2.svg');
-}
+
 .header__nav-item:nth-child(1),
 .header__nav-item:nth-child(2),
 .header__nav-item:nth-child(3) {
@@ -661,4 +684,50 @@ bold {
         padding-left: 35px;
         letter-spacing: -0.2px;
     }
+}
+.mobile-menu {
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
+}
+/* Сбрасываем стили списка */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Стили ссылок меню */
+.mobile-menu ul a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px 20px 12px 24px;
+  color: #1B1C21;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Хайлайт — бирюзовая полоска слева */
+.mobile-menu ul a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  background: #41F6D7;
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Показываем хайлайт только при наведении */
+.mobile-menu ul a:hover::before {
+  opacity: 1;
+}
+
+.mobile-menu ul a:hover {
+  color: #7E7E82;
+  outline: none;
 }
