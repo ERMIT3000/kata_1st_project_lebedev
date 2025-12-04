@@ -731,3 +731,80 @@ bold {
   color: #7E7E82;
   outline: none;
 }
+/* ——— КОНТЕЙНЕР ФУТЕРА ——— */
+.menu-toggle_footer {
+  margin-top: auto;
+  padding: 24px 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* центрируем всё содержимое по горизонтали */
+}
+
+/* ——— ИКОНКИ ГОРИЗОНТАЛЬНО ——— */
+.menu-toggle_footer-icons {
+  display: flex;
+  justify-content: center; /* иконки по центру */
+  gap: 16px; /* расстояние между иконками */
+  margin-bottom: 16px; /* отступ до текста */
+}
+
+/* ——— КНОПКА (как header__nav-link) ——— */
+.footer-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #FF3E79;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-icon-btn:hover {
+  background-color: #E02E5F;
+}
+
+/* ——— ИКОНКА (как header__nav-icon) ——— */
+.btn_call-icon,
+.btn_contact-icon,
+.btn_profile-icon {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+
+/* ——— ФОНЫ ——— */
+.btn_call-icon    { background-image: url('/pics/icons/call.svg'); }
+.btn_contact-icon { background-image: url('/pics/icons/contact.svg'); }
+.btn_profile-icon { background-image: url('/pics/icons/profile.svg'); }
+/* ——— БЛОК С ИНФОРМАЦИЕЙ ——— */
+.info {
+  text-align: center; /* текст по центру */
+}
+
+.info p {
+  margin: 4px 0;
+  font-size: 16px;
+  color: #1B1C21;
+  line-height: 1.4;
+}
+
+.info .mail,
+.info .phone {
+  font-weight: 500;
+}
+
+.info .phone {
+  font-size: 20px; /* если нужно выделить телефон */
+  font-weight: 700;
+}
+
+.info .lang {
+  font-size: 14px;
+  color: #7E7E82;
+}
