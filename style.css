@@ -782,6 +782,7 @@ bold {
 .btn_call-icon    { background-image: url('/pics/icons/call.svg'); }
 .btn_contact-icon { background-image: url('/pics/icons/contact.svg'); }
 .btn_profile-icon { background-image: url('/pics/icons/profile.svg'); }
+
 /* ——— БЛОК С ИНФОРМАЦИЕЙ ——— */
 .info {
   text-align: center; /* текст по центру */
