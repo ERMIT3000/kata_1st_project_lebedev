@@ -733,12 +733,12 @@ bold {
 }
 /* ——— КОНТЕЙНЕР ФУТЕРА ——— */
 .menu-toggle_footer {
-  margin-top: auto;
-  padding: 24px 16px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* центрируем всё содержимое по горизонтали */
+    margin-top: auto;
+    padding: 74px 24px 32px 24px;   /* верх 24, право 24, низ 32, лево 24 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;   /* главное — выравнивание влево */
 }
 
 /* ——— ИКОНКИ ГОРИЗОНТАЛЬНО ——— */
@@ -766,7 +766,6 @@ bold {
   background-color: #E02E5F;
 }
 
-/* ——— ИКОНКА (как header__nav-icon) ——— */
 .btn_call-icon,
 .btn_contact-icon,
 .btn_profile-icon {
@@ -778,14 +777,13 @@ bold {
   display: block;
 }
 
-/* ——— ФОНЫ ——— */
 .btn_call-icon    { background-image: url('/pics/icons/call.svg'); }
 .btn_contact-icon { background-image: url('/pics/icons/contact.svg'); }
 .btn_profile-icon { background-image: url('/pics/icons/profile.svg'); }
 
 /* ——— БЛОК С ИНФОРМАЦИЕЙ ——— */
 .info {
-  text-align: center; /* текст по центру */
+    text-align: start; /* текст по центру */
 }
 
 .info p {
@@ -800,12 +798,42 @@ bold {
   font-weight: 500;
 }
 
+.info .mail {
+    font-size: 16px;
+}
 .info .phone {
-  font-size: 20px; /* если нужно выделить телефон */
+  font-size: 24px; /* если нужно выделить телефон */
   font-weight: 700;
 }
 
-.info .lang {
-  font-size: 14px;
-  color: #7E7E82;
+/* ───── ВЫБОР ЯЗЫКА — КАЖДЫЙ ОТДЕЛЬНО С ХОВЕРОМ ───── */
+.lang-switcher {
+    display: flex;
+    justify-content: left;
+    gap: 12px;
+    margin-top: 12px;
 }
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    color: #7E7E82;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+}
+
+/* Hover + Focus */
+.lang-btn:hover,
+.lang-btn:focus {
+    color: rgba(126, 126, 130, 1);
+    outline: none;
+}
+
