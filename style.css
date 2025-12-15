@@ -741,48 +741,45 @@ bold {
 
 /* ИКОНКИ ГОРИЗОНТАЛЬНО */
 .menu-toggle_footer-icons {
-  display: flex;
-  justify-content: center; 
-  gap: 16px; 
-  margin-bottom: 16px; 
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
 }
 
 .footer-icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #FF3E79;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
+    width: 40px;
+    height: 40px;
+
+    background-color: #FF3E79;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+
+    transition: background-color 0.3s ease;
 }
 
 .footer-icon-btn:hover {
-  background-color: #E02E5F;
+    background-color: #E02E5F;
 }
 
-.btn_call-icon,
-.btn_contact-icon,
-.btn_profile-icon {
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: block;
+.footer-icon-btn--call {
+    background-image: url("pics/icons/call.svg");
 }
 
-.btn_call-icon    { background-image: url('/pics/icons/call.svg'); }
-.btn_contact-icon { background-image: url('/pics/icons/contact.svg'); }
-.btn_profile-icon { background-image: url('/pics/icons/profile.svg'); }
-   
-.btn_call-icon {
-    width: 20px;
-    height: 20px;
-    background: url('pics/icons/call.svg') center/contain no-repeat;
-    background-size: 20px 20px; 
+.footer-icon-btn--chat {
+    background-image: url("pics/icons/contact.svg");
+}
+
+.footer-icon-btn--profile {
+    background-image: url("pics/icons/profile.svg");
+}
 }
 /* БЛОК С ИНФОРМАЦИЕЙ */
 .info {
