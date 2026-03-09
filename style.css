@@ -26,9 +26,10 @@
     --nav-link-color: #7E7E82;
     --highlight-border: #B8FFEC;
     --white: #FFFFFF;
-    --container-width-sm: 320px;
-    --container-width-md: 768px;
-    --container-width-lg: 1120px;
+    --content-max-width: 1440px;     /* максимальная ширина контента */
+    --content-padding: 16px;         /* боковые отступы на мобильных */
+    --content-padding-md: 24px;
+    --content-padding-lg: 32px;
 }
 
 * {
@@ -44,31 +45,56 @@ body {
     color: var(--text-color);
 }
 
+.container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--content-padding-md);
+        padding-right: var(--content-padding-md);
+    }
+}
+
+@media (min-width: 1120px) {
+    .container {
+        padding-left: var(--content-padding-lg);
+        padding-right: var(--content-padding-lg);
+    }
+}
+
 bold {
     font-weight: 700;
 }
 
 .header {
-    background: var(--white);
+    position: sticky;           /* или fixed, если нужна «прилипающая» шапка */
+    top: 0;
+    z-index: 1000;
+    background: white;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .header__container {
-    position: absolute;
-    width: var(--container-width-sm);
-    height: 88px;
-    left: 0;
-    top: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;               /* или auto, если хотите гибкую высоту */
+    padding: 0 16px;
 }
 
 .header__logo {
-    position: absolute;
-    z-index: 1001;
-    left: 72.73px;
-    top: 18.59px;
+    flex-shrink: 0;
 }
 
 .header__burger {
-    position: absolute;
+    order: -1;  
     z-index: 1001;
     top: 24px;
     left: 16px;
@@ -105,13 +131,9 @@ bold {
 }
 
 .header__nav {
-    max-width: 132px;
-    overflow-x: auto;
-    white-space: nowrap;
-    margin-left: auto;
-    position: absolute;
-    top: 8px;
-    left: 188px
+display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .header__nav-list {
@@ -223,14 +245,13 @@ bold {
   z-index: 1000;
 }
 
-/* Когда чекбокс отмечен — меню выезжает */
 .menu-toggle:checked ~ .mobile-menu {
   left: 0;
 }
 .menu-toggle:checked + .header__burger .header__burger-icon {
     background-image: url('pics/icons/cross.svg');
 }
-/* Опционально: меню поверх всего */
+
 .mobile-menu ul {
   list-style: none;
   padding: 20px;
@@ -244,29 +265,25 @@ bold {
   text-decoration: none;
 }
 .main__uslugi {
-    position: relative;
-    top: 0;
-    left: 16px;
-    font-size: 28px;
+    position: static;
+    font-size: clamp(24px, 5vw, 40px);
     font-weight: 700;
-    line-height: 40px;
-    letter-spacing: -0.6px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0;
 }
 
 .main__container {
-    position: absolute;
-    width: var(--container-width-sm);
-    height: 509px;
-    left: 0;
-    top: 88px;
+    position: relative;
+    width: 100%;
+    min-height: 60vh;           /* вместо жёсткой высоты */
+    padding-top: 80px;          /* примерно высота шапки + запас */
     background: var(--background-main);
 }
 
 .main__nav-wrapper {
-    max-width: var(--container-width-sm);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
+    width: 100%;
+    padding: 0 16px 24px;
 }
 
 .main__nav {
@@ -301,11 +318,10 @@ bold {
 }
 
 .main__nav-list {
-    list-style: none;
     display: flex;
-    flex-direction: row;
-    padding-left: 16px;
-    padding-top: 40px;
+    gap: 12px;
+    padding: 0 16px;
+    white-space: nowrap;
 }
 
 .main__nav-item {
@@ -334,39 +350,35 @@ bold {
 }
 
 .main__highlight {
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: relative;
     display: flex;
     align-items: center;
+    gap: 12px;
+    padding: 32px 0 16px;
 }
 
 .content {
-    position: absolute;
-    width: var(--container-width-sm);
-    height: 407px;
-    top: 100px;
-    left: 0;
+    position: relative;
+    width: 100%;
+    padding: 0 16px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
-
-.content__text {
-    margin-bottom: 16px;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.2px;
-    padding-right: 16px;
-    padding-left: 16px;
-    color: var(--text-color);
+.content__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
 }
-
-.content__text--visible-on-320 {
-    display: block;
-}
-
-.content__text--visible-on-768,
-.content__text--visible-on-1120,
-.content__text--visible-on-1120-2 {
+.content__text--desktop-only {
     display: none;
+}
+.content__text {
+    max-width: 65ch;               /* комфортная ширина текста */
+    margin: 0 auto 24px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .content__link {
@@ -376,7 +388,7 @@ bold {
     color: var(--text-color);
     font-size: 16px;
     font-weight: 500;
-    position: absolute;
+    margin-top: 16px; display: block;
     left: 16px;
     transition: color 0.3s ease;
 }
@@ -390,11 +402,11 @@ bold {
 }
 
 .content__image {
-    position: absolute;
-    width: var(--container-width-sm);
-    top: 165px;
-
-    left: 0;
+    border-radius: 12px;          /* или 8px / 16px — как нравится */
+    overflow: hidden;             /* на всякий случай */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .main__icon {
@@ -402,14 +414,14 @@ bold {
 }
 
 @media (min-width: 768px) {
-        .header__container {
+    .header__container {
         width: var(--container-width-md);
         height: 88px;
     }
     .header__nav-item:nth-child(1),
     .header__nav-item:nth-child(2),
     .header__nav-item:nth-child(3) {
-    display: block;
+        display: block;
     }
     .header__logo {
         left: 106.73px;
@@ -419,6 +431,7 @@ bold {
     .header__burger {
         top: 24px;
         left: 24px;
+    
     }
 
     .header__palka {
@@ -437,23 +450,16 @@ bold {
     }
 
     .header__nav {
-        max-width: var(--container-width-md);
-        overflow-x: visible;
-        white-space: normal;
-        margin-left: 0;
-        display: flex;
-        justify-content: flex-end;
-        right: 8px;
-        padding-right: 24px;
-    }
-
-    .header__nav-list {
         gap: 24px;
     }
 
+    .header__nav-list {
+        flex-direction: row;
+        gap: 16px;   /* или 24px */
+    }
+
     .main__container {
-        width: var(--container-width-md);
-        height: 504px;
+        padding-top: 100px;
     }
 
     .main__nav-wrapper {
@@ -471,9 +477,10 @@ bold {
     }
 
     .main__nav-list {
-        padding-left: 24px;
-        padding-right: 24px;
-        padding-top: 32px;
+        padding: 0 24px;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .main__uslugi {
@@ -488,31 +495,18 @@ bold {
         top: 44px;
     }
 
-    .main__content,
     .content {
-        width: var(--container-width-md);
-        height: 208px;
-        top: 190px;
-        left: 0;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 32px;
+        padding: 0 24px 60px;
     }
 
     .content__text {
-        width: 350px;
-        font-size: 14px;
-        line-height: 20px;
-        padding-right: 24px;
-        padding-left: 24px;
-        letter-spacing: 0.2px;
+        width: 52%;
     }
-
-    .content__text--visible-on-320,
-    .content__text--visible-on-768 {
+    .content__text--desktop-only {
         display: block;
-    }
-
-    .content__text--visible-on-1120,
-    .content__text--visible-on-1120-2 {
-        display: none;
     }
 
     .content__link {
@@ -523,11 +517,9 @@ bold {
     }
 
     .content__image {
-        position: absolute;
-        width: 360px;
-        left: 380px;
-        top: 16px;
-        border-radius: 6px;
+        width: 48%;
+        max-width: 420px;
+        order: 2;
     }
 
     .main__nav-wrapper::before,
@@ -541,7 +533,7 @@ bold {
 
 @media (min-width: 1120px) {
     .header__container {
-        display: none;
+        padding: 20px 32px;
     }
 
     .main__container {
@@ -606,14 +598,7 @@ bold {
     }
 
     .main__highlight {
-        position: absolute;
-        width: 300px;
-        height: 40px;
-        top: 42px;
-        left: 0;
-        font-size: 28px;
-        line-height: 40px;
-        letter-spacing: -0.6px;
+        padding: 60px 32px 32px;
     }
 
     .main__uslugi {
@@ -621,11 +606,7 @@ bold {
     }
 
     .main__nav-wrapper {
-        max-width: var(--container-width-lg);
-        position: relative;
         overflow: visible;
-        padding-left: 33px;
-        top: -20px;
     }
 
     .main__nav {
@@ -637,10 +618,10 @@ bold {
     }
 
     .main__nav-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0;
-        padding: 0;
+        justify-content: flex-start;
+        padding: 0 32px;
+        gap: 32px;
+        flex-wrap: nowrap;
     }
 
     .main__nav-item {
@@ -661,9 +642,8 @@ bold {
     }
 
     .content__image {
-        width: 531.34px;
-        height: 307px;
-        left: 561px;
+        width: 50%;
+        max-width: 560px;
     }
 
     .main__content {
@@ -674,7 +654,8 @@ bold {
     }
 
     .content {
-        top: 0px;
+        gap: 80px;
+        padding: 0 32px;
     }
 
     .content__text {
@@ -836,3 +817,59 @@ bold {
     outline: none;
 }
 
+.main__container {
+    position: relative !important;
+    height: auto !important;
+    padding-bottom: 40px;
+}
+
+.content,
+.main__content,
+.content__image {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+    .content__image {
+        float: right;
+        width: 360px;
+        margin: 0 0 20px 40px;
+    }
+}
+
+@media (min-width: 1120px) {
+    .content {
+        display: flex;
+        align-items: flex-start;
+        gap: 60px;
+        padding: 0 33px;
+    }
+    .content__text {
+        flex: 1;
+        padding: 0;
+    }
+    .content__image {
+        width: 531px;
+        margin: 0;
+    }
+}
+.brands-swiper {
+    padding: 20px 0;
+}
+.brands-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+}
+.brands-swiper img {
+    max-height: 80px;
+    max-width: 140px;
+    object-fit: contain;
+}
