@@ -43,6 +43,9 @@ body {
     margin: 0;
     font-weight: 400;
     color: var(--text-color);
+    overflow-x: hidden;   
+    padding-left: 0 !important;
+    margin-left: 0 !important;        
 }
 
 .container {
@@ -181,7 +184,7 @@ bold {
 /* —— КНОПКА ПОИСКА В МОБИЛЬНОМ МЕНЮ —— */
 .mobile-menu .menu-toggle_link {
     position: absolute;
-    top: 24px;
+    top: 16px;
     right: 16px;
     width: 40px;
     height: 40px;
@@ -239,15 +242,16 @@ bold {
 }
 
 .mobile-menu {
-  position: fixed;
-  top: 0px;
-  left: -100%; 
-  width: 320px;
-  height: 100vh;
-  background: #ffffff;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 1000;
+    position: fixed;
+    top: 0px;
+    left: -100%; 
+    width: 320px;
+    height: 100vh;
+    background: #ffffff;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
 }
 
 .menu-toggle:checked ~ .mobile-menu {
@@ -281,8 +285,8 @@ bold {
 .main__container {
     position: relative;
     width: 100%;
-    min-height: 60vh;           /* вместо жёсткой высоты */
-    padding-top: 80px;          /* примерно высота шапки + запас */
+    min-height: 60vh;           
+    padding-top: 80px;          
     background: var(--background-main);
 }
 
@@ -358,9 +362,9 @@ bold {
     position: relative;
     display: flex;
     align-items: center;
-    margin-left: calc(-1 * var(--content-padding));   /* компенсируем padding контейнера */
+    margin-left: calc(-1 * var(--content-padding));   
     padding-left: var(--content-padding);
-    width: calc(100% + 2 * var(--content-padding));    /* растягиваем на всю ширину */
+    width: calc(100% + 2 * var(--content-padding));    
     background: transparent;
 }
 
@@ -382,7 +386,7 @@ bold {
     display: none;
 }
 .content__text {
-    max-width: 65ch;               /* комфортная ширина текста */
+    max-width: 65ch;               
     margin: 0 auto 24px;
     font-size: 16px;
     line-height: 1.5;
@@ -409,8 +413,8 @@ bold {
 }
 
 .content__image {
-    border-radius: 12px;          /* или 8px / 16px — как нравится */
-    overflow: hidden;             /* на всякий случай */
+    border-radius: 12px;        
+    overflow: hidden;             
     width: 100%;
     height: auto;
     display: block;
@@ -456,7 +460,7 @@ bold {
 
     .header__nav-list {
         flex-direction: row;
-        gap: 16px;   /* или 24px */
+        gap: 16px;  
     }
 
     .main__container {
@@ -533,6 +537,10 @@ bold {
 
 
 @media (min-width: 1120px) {
+    body {
+    padding-left: 320px;
+    box-sizing: border-box;
+  }
     .header {
         display: none;
     }
@@ -552,7 +560,7 @@ bold {
         height: 535px;
         top: 0;
         left: 0;
-        padding-top: 0 !important;
+        padding-top: 0;
     }
 
     .main__icon {
@@ -640,19 +648,6 @@ bold {
         display: inline-flex;
     }
 
-    .content__text--visible-on-320 {
-        display: none;
-    }
-
-    .content__text--visible-on-768 {
-        display: none;
-    }
-
-    .content__text--visible-on-1120,
-    .content__text--visible-on-1120-2 {
-        display: block;
-    }
-
     .content__image {
         width: 50%;
         max-width: 560px;
@@ -678,15 +673,15 @@ bold {
         letter-spacing: -0.2px;
     }
     .mobile-menu {
-        position: relative;       
-        transform: none !important;
-        left: 0 !important;
-        width: auto;
-        height: auto;
-        box-shadow: none;
-        background: transparent;
-        padding-top: 0;
-        z-index: auto;
+        display: block;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 320px;
+        height: 100vh;
+        transition: none;
+        visibility: visible;
+        z-index: 1000;
     }
     .mobile-menu ul {
         display: flex;
@@ -699,10 +694,15 @@ bold {
         padding: 8px 0;
         min-height: auto;
     }
-
-}
-.mobile-menu {
-    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
+   .header,
+  main,
+  .main__container,
+  footer {          
+        margin-left: 0px !important;
+    }
+    .menu-toggle {
+        display: none;
+  }
 }
 
 .mobile-menu ul {
