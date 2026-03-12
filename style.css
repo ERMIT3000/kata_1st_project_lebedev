@@ -85,12 +85,14 @@ bold {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;               /* или auto, если хотите гибкую высоту */
+    height: 72px;               
     padding: 0 16px;
 }
 
 .header__logo {
-    flex-shrink: 0;
+    position: absolute;
+    margin-left: 60px; 
+    margin-top: 8px;           
 }
 
 .header__burger {
@@ -125,13 +127,14 @@ bold {
 }
 
 .header__palka {
+    display: none;
     position: absolute;
     top: 28px;
-    left: 186px;
+    right: 130px;
 }
 
 .header__nav {
-display: flex;
+    display: flex;
     align-items: center;
     gap: 16px;
 }
@@ -149,7 +152,9 @@ display: flex;
     display: flex;
 }
 .header__palka--clone {
-    display: none;
+    display: flex;
+    align-items: center;
+        justify-content: center;
 }
 .header__nav-link {
     display: flex;
@@ -270,7 +275,7 @@ display: flex;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    margin: 0;
+    margin-left: 0;
 }
 
 .main__container {
@@ -353,8 +358,10 @@ display: flex;
     position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 32px 0 16px;
+    margin-left: calc(-1 * var(--content-padding));   /* компенсируем padding контейнера */
+    padding-left: var(--content-padding);
+    width: calc(100% + 2 * var(--content-padding));    /* растягиваем на всю ширину */
+    background: transparent;
 }
 
 .content {
@@ -424,17 +431,11 @@ display: flex;
         display: block;
     }
     .header__logo {
-        left: 106.73px;
-        top: 18.59px;
+        top: 8px;
+        left: 60px;
     }
-
-    .header__burger {
-        top: 24px;
-        left: 24px;
-    
-    }
-
-    .header__palka {
+    .header__palka {  
+        display: block;
         top: 28px;
         left: 84px;
     }
@@ -532,16 +533,26 @@ display: flex;
 
 
 @media (min-width: 1120px) {
+    .header {
+        display: none;
+    }
     .header__container {
         padding: 20px 32px;
     }
 
+    .header__burger {
+        display: none;
+    }
+    main {
+        margin-top: 0;
+    }
     .main__container {
         position: relative;
         width: var(--container-width-lg);
         height: 535px;
         top: 0;
         left: 0;
+        padding-top: 0 !important;
     }
 
     .main__icon {
@@ -598,7 +609,8 @@ display: flex;
     }
 
     .main__highlight {
-        padding: 60px 32px 32px;
+        margin-left: -16px;          
+        width: calc(100% + 64px);
     }
 
     .main__uslugi {
@@ -665,6 +677,29 @@ display: flex;
         padding-left: 35px;
         letter-spacing: -0.2px;
     }
+    .mobile-menu {
+        position: relative;       
+        transform: none !important;
+        left: 0 !important;
+        width: auto;
+        height: auto;
+        box-shadow: none;
+        background: transparent;
+        padding-top: 0;
+        z-index: auto;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        padding: 0;
+        margin: 0;
+    }
+    .mobile-menu ul a {
+        padding: 8px 0;
+        min-height: auto;
+    }
+
 }
 .mobile-menu {
     box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
