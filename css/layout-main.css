@@ -16,6 +16,7 @@
     padding-top: calc(var(--header-h) + 8px);
     padding-bottom: 40px;
     background: var(--background-main);
+    overflow-x: hidden;
 }
 
 .main__nav-wrapper {

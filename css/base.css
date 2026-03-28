@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--white);
     font-family: "TT Lakes", sans-serif;
