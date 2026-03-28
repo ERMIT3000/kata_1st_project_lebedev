@@ -18,42 +18,8 @@
 </head>
 <body>
     <div class="header-bg" aria-hidden="true"></div>
-    <aside class="aside-menu" id="aside-menu" aria-label="Меню сайта" aria-hidden="true">
-        <button type="button" class="aside-menu__search round-icon round-icon--search" aria-label="Поиск">
-            <span class="round-icon__icon" aria-hidden="true"></span>
-        </button>
-        <nav class="aside-menu__nav" aria-label="Разделы сайта">
-            <ul class="aside-menu__list">
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Ремонт техники</a></li>
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Услуги и сервисы</a></li>
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Корпоративным клиентам</a></li>
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Продавцам техники</a></li>
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Партнерам</a></li>
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Производителям</a></li>
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Наши сервисные центры</a></li>
-                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Контакты</a></li>
-            </ul>
-        </nav>
-        <footer class="aside-menu__footer">
-            <div class="aside-menu__actions">
-                <a href="tel:+78008908900" class="aside-menu__action round-icon round-icon--call" aria-label="Позвонить"><span class="round-icon__icon" aria-hidden="true"></span></a>
-                <a href="#" class="aside-menu__action round-icon round-icon--chat" aria-label="Написать"><span class="round-icon__icon" aria-hidden="true"></span></a>
-                <a href="#" class="aside-menu__action round-icon round-icon--profile" aria-label="Профиль"><span class="round-icon__icon" aria-hidden="true"></span></a>
-            </div>
-            <div class="aside-menu__contacts">
-                <a class="aside-menu__mail" href="mailto:mail@cps.com">mail@cps.com</a>
-                <a class="aside-menu__phone" href="tel:+78008908900">8 800 890 8900</a>
-                <ul class="aside-menu__lang-list" role="list">
-                    <li><a href="#" class="aside-menu__lang" hreflang="ru">RU</a></li>
-                    <li><a href="#" class="aside-menu__lang" hreflang="en">EN</a></li>
-                    <li><a href="#" class="aside-menu__lang" hreflang="zh">CH</a></li>
-                </ul>
-            </div>
-        </footer>
-    </aside>
-
-    <header class="header">
-        <div class="header__container">
+    <div class="header__brand">
+        <div class="header__brand-inner">
             <button type="button" class="header__menu-open round-icon round-icon--burger" id="aside-menu-open" aria-controls="aside-menu" aria-expanded="false" aria-label="Открыть меню">
                 <span class="round-icon__icon" aria-hidden="true"></span>
             </button>
@@ -69,6 +35,10 @@
                     <path d="M80.9528 24.4687C79.5051 23.1861 77.4843 22.4425 75.1908 21.6713C73.5567 21.1027 72.6563 20.7894 72.056 20.2421C71.5822 19.8399 71.371 19.4033 71.371 18.8262C71.371 17.5622 72.2299 16.2113 74.6412 16.2113C76.2799 16.2113 77.6519 16.912 78.7194 18.293L79.1432 18.8414L82.6595 14.3656L82.3389 14.0445C80.1884 11.8924 77.3546 10.7554 74.1437 10.7554C67.6654 10.7554 64.7655 14.9699 64.7655 19.1468C64.7655 21.3882 65.5649 23.196 67.1364 24.5175C68.5434 25.7234 70.2593 26.3991 71.9052 26.9507L72.0912 27.0123C73.5528 27.4954 75.0643 27.9954 75.9671 28.8034C76.5952 29.3805 76.8751 30.0076 76.8751 30.8367C76.8751 32.7368 75.3788 34.0137 73.1518 34.0137C71.3914 34.0137 69.0733 33.1508 67.8469 30.7296L67.5261 30.0953L63.1555 34.1411L63.4133 34.5056C64.8077 36.4801 67.9542 39.7924 73.3591 39.7924C79.3188 39.7924 83.4814 35.9608 83.4814 30.4751C83.4814 27.3374 82.1049 25.4752 80.9528 24.4687" stroke="#80949F" stroke-width="0.5"/>
                 </svg>
             </a>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header__container">
             <div class="header__palka">
                 <svg width="2" height="32" viewBox="0 0 2 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="2" height="32" rx="1" fill="#EAEAEA"/>
@@ -114,6 +84,40 @@
             </nav>
         </div>
     </header>
+
+    <aside class="aside-menu" id="aside-menu" aria-label="Меню сайта" aria-hidden="true">
+        <button type="button" class="aside-menu__search round-icon round-icon--search" aria-label="Поиск">
+            <span class="round-icon__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="aside-menu__nav" aria-label="Разделы сайта">
+            <ul class="aside-menu__list">
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Ремонт техники</a></li>
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Услуги и сервисы</a></li>
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Корпоративным клиентам</a></li>
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Продавцам техники</a></li>
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Партнерам</a></li>
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Производителям</a></li>
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Наши сервисные центры</a></li>
+                <li class="aside-menu__item"><a class="aside-menu__link" href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <footer class="aside-menu__footer">
+            <div class="aside-menu__actions">
+                <a href="tel:+78008908900" class="aside-menu__action round-icon round-icon--call" aria-label="Позвонить"><span class="round-icon__icon" aria-hidden="true"></span></a>
+                <a href="#" class="aside-menu__action round-icon round-icon--chat" aria-label="Написать"><span class="round-icon__icon" aria-hidden="true"></span></a>
+                <a href="#" class="aside-menu__action round-icon round-icon--profile" aria-label="Профиль"><span class="round-icon__icon" aria-hidden="true"></span></a>
+            </div>
+            <div class="aside-menu__contacts">
+                <a class="aside-menu__mail" href="mailto:mail@cps.com">mail@cps.com</a>
+                <a class="aside-menu__phone" href="tel:+78008908900">8 800 890 8900</a>
+                <ul class="aside-menu__lang-list" role="list">
+                    <li><a href="#" class="aside-menu__lang" hreflang="ru">RU</a></li>
+                    <li><a href="#" class="aside-menu__lang" hreflang="en">EN</a></li>
+                    <li><a href="#" class="aside-menu__lang" hreflang="zh">CH</a></li>
+                </ul>
+            </div>
+        </footer>
+    </aside>
 
     <main class="main">
         <div class="main__container">
@@ -269,16 +273,16 @@
         </section>
 
         <section class="section section--reviews" aria-labelledby="reviews-heading">
-            <h2 id="reviews-heading" class="section__title">Отзывы клиентов</h2>
+            <h2 id="reviews-heading" class="section__title">блок заглушка</h2>
             <article class="review-card">
-                <p class="review-card__text">«Отличный сервис! Починили MacBook за 3 дня, всё честно и по гарантии.»</p>
-                <p class="review-card__author">Алексей П. — 4.9 ★</p>
+                <p class="review-card__text">«блок заглушка блок заглушка блок заглушка блок заглушка»</p>
+                <p class="review-card__author">Вака Флака — 4.9 ★</p>
             </article>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 Сервисный центр. Все права защищены.</p>
+        <p>© 2026 Сервисный центр. ФУТЕР ПОТОМ ДОДЕЛАЮ.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>

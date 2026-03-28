@@ -21,8 +21,8 @@
 .aside-menu.aside-menu--open {
     left: 0;
     box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
-    /* Открыто: панель над header-bg (1000), под прозрачным .header (1200) — бургер и лого остаются кликабельными */
-    z-index: 1160;
+    /* Выше .header с иконками (1200), ниже .header__brand с бургером и лого (1250) */
+    z-index: 1220;
 }
 
 .aside-menu__search {

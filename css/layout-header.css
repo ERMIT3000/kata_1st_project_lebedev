@@ -1,4 +1,4 @@
-/* Шапка: .header-bg, .header, навигация */
+/* Шапка: .header-bg, .header__brand (бургер+лого), .header (палка+иконки справа) */
 .header-bg {
     position: fixed;
     top: 0;
@@ -11,12 +11,41 @@
     pointer-events: auto;
 }
 
+/* Слой выше открытого aside (1220), чтобы бургер и лого оставались кликабельными */
+.header__brand {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1250;
+    height: var(--header-h);
+    box-sizing: border-box;
+    pointer-events: none;
+    background: transparent;
+}
+
+.header__brand-inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 16px;
+    height: 100%;
+    padding: 0 var(--content-padding);
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.header__brand .header__menu-open,
+.header__brand .header__logo {
+    pointer-events: auto;
+}
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    /* Выше закрытого aside (1040); фон шапки прозрачный — открытая панель меню видна слева под слоем шапки */
+    /* Палка и правые иконки: ниже .header__brand (1250), выше закрытого aside (1040) */
     z-index: 1200;
     background: transparent;
     box-shadow: none;
@@ -28,6 +57,7 @@
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    justify-content: flex-end;
     gap: 16px;
     height: 72px;
     padding: 0 var(--content-padding);
@@ -38,7 +68,6 @@
 .header__menu-open {
     flex-shrink: 0;
     position: relative;
-    z-index: 1210;
     pointer-events: auto;
 }
 
@@ -71,7 +100,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-left: auto;
+    margin-left: 0;
     flex-shrink: 0;
     position: relative;
     pointer-events: auto;
