@@ -1,0 +1,61 @@
+/* UI: круглые кнопки .round-icon (+ модификаторы) */
+.round-icon {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0;
+}
+
+a.round-icon {
+    cursor: pointer;
+}
+
+.round-icon:hover,
+.round-icon:focus-visible {
+    background-color: var(--accent-hover);
+    outline: none;
+}
+
+.round-icon__icon {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+}
+
+.round-icon--burger .round-icon__icon {
+    background-image: url('data:image/svg+xml,%3Csvg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM0 8C0 7.44772 0.447715 7 1 7H9C9.55228 7 10 7.44772 10 8C10 8.55229 9.55229 9 9 9H1C0.447715 9 0 8.55229 0 8ZM1 14C0.447715 14 0 14.4477 0 15C0 15.5523 0.447716 16 1 16H13C13.5523 16 14 15.5523 14 15C14 14.4477 13.5523 14 13 14H1Z" fill="%23FFFFFF"/%3E%3C/svg%3E');
+}
+
+.round-icon--call .round-icon__icon {
+    background-image: url('../pics/icons/call.svg');
+}
+
+.round-icon--chat .round-icon__icon {
+    background-image: url('../pics/icons/contact.svg');
+}
+
+.round-icon--profile .round-icon__icon {
+    background-image: url('../pics/icons/profile.svg');
+}
+
+.round-icon--settings .round-icon__icon {
+    background-image: url('../pics/icons/settings.svg');
+}
+
+.round-icon--search .round-icon__icon {
+    background-image: url('../pics/icons/search.svg');
+}

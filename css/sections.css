@@ -1,0 +1,76 @@
+/* Секции, отзывы, подвал сайта */
+.section {
+    padding: 40px var(--content-padding);
+}
+
+.section--brands {
+    padding-top: 0;
+    background: var(--background-main);
+}
+
+.brands-section__heading-bar {
+    --bh-pad: var(--content-padding);
+    margin-left: calc(-1 * var(--bh-pad));
+    margin-right: calc(-1 * var(--bh-pad));
+    width: calc(100% + 2 * var(--bh-pad));
+    margin-bottom: 24px;
+    padding: 24px var(--bh-pad) 20px;
+    box-sizing: border-box;
+    background: var(--white);
+    border-top: 1px solid var(--teal);
+}
+
+.brands-section__heading {
+    margin: 0;
+    max-width: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--nav-link-color);
+}
+
+.section--reviews {
+    background: var(--background-main);
+}
+
+.section__title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 24px;
+    letter-spacing: -0.6px;
+}
+
+.review-card {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.review-card:last-child {
+    margin-bottom: 0;
+}
+
+.review-card__text {
+    font-style: italic;
+    margin: 0 0 16px;
+}
+
+.review-card__author {
+    font-weight: 500;
+    margin: 0;
+}
+
+.site-footer {
+    padding: 40px var(--content-padding);
+    background: var(--footer-bg);
+    color: var(--white);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}

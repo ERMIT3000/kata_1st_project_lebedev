@@ -1,0 +1,111 @@
+/* Шапка: .header-bg, .header, навигация */
+.header-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-h);
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+    pointer-events: none;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 16px;
+    height: 72px;
+    padding: 0 var(--content-padding);
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.header__menu-open {
+    flex-shrink: 0;
+    position: relative;
+    pointer-events: auto;
+}
+
+.header__menu-open.header__menu-open--expanded .round-icon__icon {
+    background-image: url('../pics/icons/cross.svg');
+}
+
+.header__logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-width: 0;
+    position: relative;
+    pointer-events: auto;
+}
+
+.header__logo svg {
+    display: block;
+}
+
+.header__palka {
+    display: none;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    flex-shrink: 0;
+    position: relative;
+    pointer-events: auto;
+}
+
+.header__nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    gap: 16px;
+    
+}
+
+.header__nav-item {
+    display: flex;
+}
+.header__palka--clone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__nav-group {
+    display: none;
+}
+
+.header__nav-group-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.header__nav-btn {
+    font: inherit;
+}

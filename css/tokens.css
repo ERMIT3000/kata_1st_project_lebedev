@@ -1,0 +1,27 @@
+/* Дизайн-токены (:root) */
+:root {
+    --background-main: #F8F8F8;
+    --text-color: #1B1C21;
+    --nav-link-color: #7E7E82;
+    --highlight-border: #B8FFEC;
+    --white: #FFFFFF;
+    --footer-bg: #1B1C21;
+    --accent: #ff3e79;
+    --accent-hover: #e02e5f;
+    --teal: #41f6d7;
+    --link-muted-hover: #6f6f6f;
+    --border-light: #eaeaea;
+    --content-max-width: 1440px;
+    --content-padding: 24px;
+    --content-padding-md: 24px;
+    --content-padding-lg: 24px;
+    --container-width-sm: 768px;
+    --container-width-md: 768px;
+    --container-width-lg: 1120px;
+    --sidebar-w: 320px;
+    --sm-x: clamp(16px, 4vw, 24px);
+    --sm-inset: clamp(12px, 3vw, 20px);
+    --sm-py: clamp(4px, 1.1vh, 10px);
+    --sm-strip: clamp(4px, 1vh, 10px);
+    --header-h: 72px;
+}

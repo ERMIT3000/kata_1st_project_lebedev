@@ -1,0 +1,45 @@
+/* Сброс, body, .container */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    font-family: "TT Lakes", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    color: var(--text-color);
+    overflow-x: hidden;   
+    padding-left: 0 !important;
+    margin-left: 0 !important;        
+}
+.content__image {
+    border-radius: 12px;
+    overflow: hidden;
+}
+.container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--content-padding-md);
+        padding-right: var(--content-padding-md);
+    }
+}
+
+@media (min-width: 1120px) {
+    .container {
+        padding-left: var(--content-padding-lg);
+        padding-right: var(--content-padding-lg);
+    }
+}
+
+bold {
+    font-weight: 700;
+}
