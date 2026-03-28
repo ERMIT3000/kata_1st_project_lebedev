@@ -524,8 +524,10 @@ bold {
         width: 48%;
         max-width: 420px;
         order: 2;
+        float: right;
+        width: 360px;
+        margin: 0 0 20px 40px;
     }
-
     .main__nav-wrapper::before,
     .main__nav-wrapper::after {
         top: 142px;
@@ -652,19 +654,21 @@ bold {
         height: 360px;
         top: -36px;
     }
-
-    .content {
-        gap: 80px;
-        padding: 0 32px;
+        .content {
+        display: flex;
+        align-items: flex-start;
+        gap: 60px;
+        padding: 0 33px;
     }
-
     .content__text {
-        width: 530px;
-        font-size: 14px;
-        line-height: 20px;
-        padding-left: 35px;
-        letter-spacing: -0.2px;
+        flex: 1;
+        padding: 0;
     }
+    .content__image {
+        width: 531px;
+        margin: 0;
+    }
+
     .mobile-menu {
         left: 0;           
         position: fixed;           
@@ -865,30 +869,6 @@ bold {
     padding: 0 16px;
 }
 
-@media (min-width: 768px) {
-    .content__image {
-        float: right;
-        width: 360px;
-        margin: 0 0 20px 40px;
-    }
-}
-
-@media (min-width: 1120px) {
-    .content {
-        display: flex;
-        align-items: flex-start;
-        gap: 60px;
-        padding: 0 33px;
-    }
-    .content__text {
-        flex: 1;
-        padding: 0;
-    }
-    .content__image {
-        width: 531px;
-        margin: 0;
-    }
-}
 .brands-swiper {
     padding: 20px 0;
 }
