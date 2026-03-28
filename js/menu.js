@@ -12,7 +12,6 @@
             if (isDesktop()) {
                 aside.classList.remove('aside-menu--open');
                 aside.setAttribute('aria-hidden', 'false');
-                document.body.classList.remove('aside-open');
                 if (openBtn) {
                     openBtn.classList.remove('header__menu-open--expanded');
                     openBtn.setAttribute('aria-expanded', 'false');
@@ -22,7 +21,6 @@
             }
             aside.classList.toggle('aside-menu--open', open);
             aside.setAttribute('aria-hidden', open ? 'false' : 'true');
-            document.body.classList.toggle('aside-open', open);
             if (openBtn) {
                 openBtn.classList.toggle('header__menu-open--expanded', open);
                 openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');

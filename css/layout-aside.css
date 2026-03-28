@@ -13,13 +13,16 @@
     box-sizing: border-box;
     background: var(--white);
     transition: left 0.4s ease;
-    z-index: 1160;
+    /* Закрытое меню ниже .header (1200), иначе слой aside перекрывает всю шапку на мобилке/планшете */
+    z-index: 1040;
     overflow: hidden;
 }
 
 .aside-menu.aside-menu--open {
     left: 0;
     box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+    /* Открыто: панель над header-bg (1000), под прозрачным .header (1200) — бургер и лого остаются кликабельными */
+    z-index: 1160;
 }
 
 .aside-menu__search {
@@ -175,16 +178,4 @@
 
 .aside-menu__action.round-icon .round-icon__icon {
     background-size: clamp(17px, 4.2vw, 20px);
-}
-
-/* Затемнение контента при открытом выезжающем меню (<1120px); палка и иконки шапки под слоем, бургер и лого — z-index выше в layout-header / responsive */
-@media (max-width: 1119px) {
-    body.aside-open::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        z-index: 1150;
-        background: rgba(0, 0, 0, 0.12);
-        pointer-events: none;
-    }
 }

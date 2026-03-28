@@ -16,8 +16,8 @@
     top: 0;
     left: 0;
     right: 0;
-    /* z-index: auto — чтобы .aside-menu и оверлей могли перекрыть палку и иконки; бургер и лого поднимаются своим z-index */
-    z-index: auto;
+    /* Выше закрытого aside (1040); фон шапки прозрачный — открытая панель меню видна слева под слоем шапки */
+    z-index: 1200;
     background: transparent;
     box-shadow: none;
     width: 100%;
