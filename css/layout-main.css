@@ -34,26 +34,56 @@
     position: relative;
 }
 
+/* Затухание на обёртке: не внутри скролла, фиксировано по краям видимой полосы */
 .main__nav-wrapper::before,
 .main__nav-wrapper::after {
     content: '';
     position: absolute;
-    top: 50px;
-    bottom: 0;
-    width: 20px;
-    height: 43px;
+    top: 16px;
+    width: 10px;
+    height: 52px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 .main__nav-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, var(--background-main), rgba(255, 255, 255, 0));
+    left: var(--content-padding);
+    background: linear-gradient(
+        to right,
+        var(--background-main) 0%,
+        color-mix(in srgb, var(--background-main) 45%, transparent) 52%,
+        transparent 100%
+    );
 }
 
 .main__nav-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, var(--background-main), rgba(255, 255, 255, 0));
+    right: var(--content-padding);
+    background: linear-gradient(
+        to left,
+        var(--background-main) 0%,
+        color-mix(in srgb, var(--background-main) 45%, transparent) 52%,
+        transparent 100%
+    );
+}
+
+@supports not (background: color-mix(in srgb, red, blue)) {
+    .main__nav-wrapper::before {
+        background: linear-gradient(
+            to right,
+            var(--background-main) 0%,
+            rgba(248, 248, 248, 0.5) 55%,
+            rgba(248, 248, 248, 0) 100%
+        );
+    }
+
+    .main__nav-wrapper::after {
+        background: linear-gradient(
+            to left,
+            var(--background-main) 0%,
+            rgba(248, 248, 248, 0.5) 55%,
+            rgba(248, 248, 248, 0) 100%
+        );
+    }
 }
 
 .main__nav-list {

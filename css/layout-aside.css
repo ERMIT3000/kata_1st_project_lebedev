@@ -13,7 +13,7 @@
     box-sizing: border-box;
     background: var(--white);
     transition: left 0.4s ease;
-    z-index: 1100;
+    z-index: 1160;
     overflow: hidden;
 }
 
@@ -175,4 +175,16 @@
 
 .aside-menu__action.round-icon .round-icon__icon {
     background-size: clamp(17px, 4.2vw, 20px);
+}
+
+/* Затемнение контента при открытом выезжающем меню (<1120px); палка и иконки шапки под слоем, бургер и лого — z-index выше в layout-header / responsive */
+@media (max-width: 1119px) {
+    body.aside-open::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 1150;
+        background: rgba(0, 0, 0, 0.12);
+        pointer-events: none;
+    }
 }
