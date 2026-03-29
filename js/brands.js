@@ -8,16 +8,12 @@
     const labelEl = btn?.querySelector('[data-expand-label]');
 
     const MOBILE_MAX = 767;
-    /** В карусели на мобилке — 9 брендов и 9 точек пагинации */
     const MOBILE_SLIDE_COUNT = 9;
-    /** На планшете: свёрнуто 6, развёрнуто 11 */
-    /** На 1120+: свёрнуто 8 (сетка 4×2), развёрнуто 11 */
     const LIMIT_TABLET = 6;
     const LIMIT_DESKTOP = 8;
 
     let swiper = null;
     let expanded = false;
-    /** Две последние карточки убираются из DOM на мобилке и возвращаются на ≥768 */
     let mobileOverflowFragment = null;
 
     function getLimit() {
