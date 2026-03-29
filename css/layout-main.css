@@ -35,8 +35,6 @@
     position: relative;
 }
 
-/* Затухание на обёртке: не внутри скролла, фиксировано по краям видимой полосы */
-.main__nav-wrapper::before,
 .main__nav-wrapper::after {
     content: '';
     position: absolute;

@@ -7,7 +7,6 @@
     height: var(--header-h);
     background: var(--white);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    /* Как у блока с заголовком брендов: border-top 1px solid var(--teal) */
     border-bottom: 1px solid var(--teal);
     z-index: 1000;
     pointer-events: auto;
