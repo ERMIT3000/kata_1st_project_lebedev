@@ -166,8 +166,12 @@
         padding: 0 var(--content-padding-md) 40px;
     }
 
-    .content__text--tablet {
+    .content__text--continuation-snippet {
         display: block;
+    }
+
+    .content__text--continuation-full {
+        display: none;
     }
 
     .content__column {
@@ -537,5 +541,15 @@
 
     .header__menu-open {
         display: none;
+    }
+}
+
+@media (min-width: 1220px) {
+    .content__text--continuation-snippet {
+        display: none;
+    }
+
+    .content__text--continuation-full {
+        display: block;
     }
 }

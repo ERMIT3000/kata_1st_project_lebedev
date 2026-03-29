@@ -170,7 +170,8 @@
     line-height: 1.5;
 }
 
-.content__text--tablet {
+.content__text--continuation-snippet,
+.content__text--continuation-full {
     display: none;
 }
 
